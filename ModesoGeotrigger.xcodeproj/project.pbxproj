@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		219D3C39CA11675F502F2816 /* libPods-ModesoGeotrigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */; };
+		FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E01C5BA40B00884CD6 /* main.m */; };
+		FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */; };
+		FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E61C5BA40B00884CD6 /* ViewController.m */; };
+		FEFCE9EA1C5BA40B00884CD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9E81C5BA40B00884CD6 /* Main.storyboard */; };
+		FEFCE9EC1C5BA40B00884CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */; };
+		FEFCE9EF1C5BA40B00884CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9ED1C5BA40B00884CD6 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ModesoGeotrigger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.debug.xcconfig"; sourceTree = "<group>"; };
+		F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.release.xcconfig"; sourceTree = "<group>"; };
+		FEFCE9DC1C5BA40B00884CD6 /* ModesoGeotrigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModesoGeotrigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEFCE9E01C5BA40B00884CD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FEFCE9E51C5BA40B00884CD6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FEFCE9E61C5BA40B00884CD6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FEFCE9E91C5BA40B00884CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEFCE9EE1C5BA40B00884CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEFCE9F01C5BA40B00884CD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEFCE9D91C5BA40B00884CD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219D3C39CA11675F502F2816 /* libPods-ModesoGeotrigger.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BED189ED9533F02FAE5DA01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3DC3F0EEC72C7E879FB94AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */,
+				F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEFCE9D31C5BA40B00884CD6 = {
+			isa = PBXGroup;
+			children = (
+				FEFCE9DE1C5BA40B00884CD6 /* ModesoGeotrigger */,
+				FEFCE9DD1C5BA40B00884CD6 /* Products */,
+				C3DC3F0EEC72C7E879FB94AD /* Pods */,
+				9BED189ED9533F02FAE5DA01 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FEFCE9DD1C5BA40B00884CD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEFCE9DC1C5BA40B00884CD6 /* ModesoGeotrigger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEFCE9DE1C5BA40B00884CD6 /* ModesoGeotrigger */ = {
+			isa = PBXGroup;
+			children = (
+				FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */,
+				FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */,
+				FEFCE9E51C5BA40B00884CD6 /* ViewController.h */,
+				FEFCE9E61C5BA40B00884CD6 /* ViewController.m */,
+				FEFCE9E81C5BA40B00884CD6 /* Main.storyboard */,
+				FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */,
+				FEFCE9ED1C5BA40B00884CD6 /* LaunchScreen.storyboard */,
+				FEFCE9F01C5BA40B00884CD6 /* Info.plist */,
+				FEFCE9DF1C5BA40B00884CD6 /* Supporting Files */,
+			);
+			path = ModesoGeotrigger;
+			sourceTree = "<group>";
+		};
+		FEFCE9DF1C5BA40B00884CD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEFCE9E01C5BA40B00884CD6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEFCE9DB1C5BA40B00884CD6 /* ModesoGeotrigger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEFCE9F31C5BA40B00884CD6 /* Build configuration list for PBXNativeTarget "ModesoGeotrigger" */;
+			buildPhases = (
+				C110F5F48C5FC0A308608E94 /* Check Pods Manifest.lock */,
+				FEFCE9D81C5BA40B00884CD6 /* Sources */,
+				FEFCE9D91C5BA40B00884CD6 /* Frameworks */,
+				FEFCE9DA1C5BA40B00884CD6 /* Resources */,
+				B0318641D76976CF30F5FAD5 /* Embed Pods Frameworks */,
+				B9776981AD4F902AE1F44F55 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModesoGeotrigger;
+			productName = ModesoGeotrigger;
+			productReference = FEFCE9DC1C5BA40B00884CD6 /* ModesoGeotrigger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEFCE9D41C5BA40B00884CD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Modeso;
+				TargetAttributes = {
+					FEFCE9DB1C5BA40B00884CD6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = FEFCE9D71C5BA40B00884CD6 /* Build configuration list for PBXProject "ModesoGeotrigger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEFCE9D31C5BA40B00884CD6;
+			productRefGroup = FEFCE9DD1C5BA40B00884CD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEFCE9DB1C5BA40B00884CD6 /* ModesoGeotrigger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEFCE9DA1C5BA40B00884CD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEFCE9EF1C5BA40B00884CD6 /* LaunchScreen.storyboard in Resources */,
+				FEFCE9EC1C5BA40B00884CD6 /* Assets.xcassets in Resources */,
+				FEFCE9EA1C5BA40B00884CD6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0318641D76976CF30F5FAD5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9776981AD4F902AE1F44F55 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C110F5F48C5FC0A308608E94 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEFCE9D81C5BA40B00884CD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */,
+				FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */,
+				FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FEFCE9E81C5BA40B00884CD6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEFCE9E91C5BA40B00884CD6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FEFCE9ED1C5BA40B00884CD6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEFCE9EE1C5BA40B00884CD6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEFCE9F11C5BA40B00884CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FEFCE9F21C5BA40B00884CD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEFCE9F41C5BA40B00884CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ModesoGeotrigger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.modeso.ModesoGeotrigger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEFCE9F51C5BA40B00884CD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ModesoGeotrigger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.modeso.ModesoGeotrigger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEFCE9D71C5BA40B00884CD6 /* Build configuration list for PBXProject "ModesoGeotrigger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEFCE9F11C5BA40B00884CD6 /* Debug */,
+				FEFCE9F21C5BA40B00884CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEFCE9F31C5BA40B00884CD6 /* Build configuration list for PBXNativeTarget "ModesoGeotrigger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEFCE9F41C5BA40B00884CD6 /* Debug */,
+				FEFCE9F51C5BA40B00884CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEFCE9D41C5BA40B00884CD6 /* Project object */;
+}

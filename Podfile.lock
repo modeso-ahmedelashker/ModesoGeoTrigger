@@ -1,0 +1,13 @@
+PODS:
+  - ArcGIS-Runtime-SDK-iOS (10.2.5)
+  - GeotriggerSDK (1.2.1)
+
+DEPENDENCIES:
+  - ArcGIS-Runtime-SDK-iOS
+  - GeotriggerSDK
+
+SPEC CHECKSUMS:
+  ArcGIS-Runtime-SDK-iOS: 0d62980b8ed60c1ee8ca292c1c644e74e0e922aa
+  GeotriggerSDK: 1c0f26aea84bb3f6fa8add4bf3586a6dd79bd0a4
+
+COCOAPODS: 0.39.0
