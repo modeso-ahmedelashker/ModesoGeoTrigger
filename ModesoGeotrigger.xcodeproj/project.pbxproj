@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		219D3C39CA11675F502F2816 /* libPods-ModesoGeotrigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */; };
+		FE58E63E1C62463A000DF159 /* Trigger.m in Sources */ = {isa = PBXBuildFile; fileRef = FE58E63B1C62463A000DF159 /* Trigger.m */; };
+		FE58E63F1C62463A000DF159 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE58E63D1C62463A000DF159 /* User.m */; };
 		FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E01C5BA40B00884CD6 /* main.m */; };
 		FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */; };
 		FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E61C5BA40B00884CD6 /* ViewController.m */; };
@@ -20,6 +22,10 @@
 		7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ModesoGeotrigger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.debug.xcconfig"; sourceTree = "<group>"; };
 		F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.release.xcconfig"; sourceTree = "<group>"; };
+		FE58E63A1C62463A000DF159 /* Trigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigger.h; sourceTree = "<group>"; };
+		FE58E63B1C62463A000DF159 /* Trigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trigger.m; sourceTree = "<group>"; };
+		FE58E63C1C62463A000DF159 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FE58E63D1C62463A000DF159 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEFCE9DC1C5BA40B00884CD6 /* ModesoGeotrigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModesoGeotrigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFCE9E01C5BA40B00884CD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +67,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE58E6401C624650000DF159 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE58E63A1C62463A000DF159 /* Trigger.h */,
+				FE58E63B1C62463A000DF159 /* Trigger.m */,
+				FE58E63C1C62463A000DF159 /* User.h */,
+				FE58E63D1C62463A000DF159 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FEFCE9D31C5BA40B00884CD6 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +99,7 @@
 		FEFCE9DE1C5BA40B00884CD6 /* ModesoGeotrigger */ = {
 			isa = PBXGroup;
 			children = (
+				FE58E6401C624650000DF159 /* Models */,
 				FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */,
 				FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */,
 				FEFCE9E51C5BA40B00884CD6 /* ViewController.h */,
@@ -137,6 +155,12 @@
 				TargetAttributes = {
 					FEFCE9DB1C5BA40B00884CD6 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XP9UK5V4RA;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -224,6 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE58E63F1C62463A000DF159 /* User.m in Sources */,
+				FE58E63E1C62463A000DF159 /* Trigger.m in Sources */,
 				FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */,
 				FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */,
 				FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */,
@@ -337,11 +363,15 @@
 			baseConfigurationReference = B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ModesoGeotrigger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.modeso.ModesoGeotrigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -350,11 +380,15 @@
 			baseConfigurationReference = F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ModesoGeotrigger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.modeso.ModesoGeotrigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

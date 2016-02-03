@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <GeotriggerSDK/GeotriggerSDK.h>
+
+NSString *kClientId = @"Y7LJi20LkgmnshCr";
 
 @interface AppDelegate ()
 
@@ -17,6 +20,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // --------------------------- GeoTrigger Manager ---------------------------------
+    // Enable debug logs to the console. This spits out a lot of logs so you probably don't want to do this in a release build, but it is good for helping track down any problems you may encounter.
+    [AGSGTGeotriggerManager setLogLevel:AGSGTLogLevelDebug];
+    
+    [AGSGTGeotriggerManager setupWithClientId:kClientId isProduction:NO tags:nil isOffline:NO completion:^(NSError *error)
+     {
+         if (error != nil)
+         {
+             NSLog(@"Geotrigger Service setup encountered error: %@", error);
+         }
+         else
+         {
+             NSLog(@"Geotrigger Service ready to go!");
+         }
+     }];
+    ;
+    
+    // If we were launched from a push notification, send the payload to the Geotrigger Manager
+    if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil)
+    {
+        [AGSGTGeotriggerManager handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] showAlert:NO];
+    }
     return YES;
 }
 
