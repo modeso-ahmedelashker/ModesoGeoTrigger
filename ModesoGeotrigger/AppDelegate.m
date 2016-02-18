@@ -41,9 +41,29 @@ NSString *kClientId = @"Y7LJi20LkgmnshCr";
     // If we were launched from a push notification, send the payload to the Geotrigger Manager
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil)
     {
-        [AGSGTGeotriggerManager handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] showAlert:NO];
+        [AGSGTGeotriggerManager handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] showAlert:YES];
     }
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"registerForRemoteNotificationsSuccess" object:nil];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    NSLog(@"Failed to register for remote notifications with Apple: %@", [error debugDescription]);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"registerForRemoteNotificationsFailure" object:nil];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    NSMutableDictionary *receivedTriggerData = userInfo[@"data"];
+    
+    //self.lvc.mvc.cmv.firedDict = [NSMutableDictionary dictionaryWithDictionary:receivedTriggerData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotificationReceived" object:receivedTriggerData];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
