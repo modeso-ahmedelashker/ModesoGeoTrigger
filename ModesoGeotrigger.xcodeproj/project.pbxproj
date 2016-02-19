@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		219D3C39CA11675F502F2816 /* libPods-ModesoGeotrigger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */; };
-		FE3C7FB51C75F75000AEFEEB /* ModesoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FB41C75F75000AEFEEB /* ModesoMapView.m */; };
-		FE3C7FB81C761F6900AEFEEB /* GISOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FB71C761F6900AEFEEB /* GISOperations.m */; };
-		FE58E63E1C62463A000DF159 /* Trigger.m in Sources */ = {isa = PBXBuildFile; fileRef = FE58E63B1C62463A000DF159 /* Trigger.m */; };
-		FE58E63F1C62463A000DF159 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE58E63D1C62463A000DF159 /* User.m */; };
+		FE3C7FBF1C774E7700AEFEEB /* GISOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FBE1C774E7700AEFEEB /* GISOperations.m */; };
+		FE3C7FC31C774EAE00AEFEEB /* ModesoMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FC21C774EAE00AEFEEB /* ModesoMapView.m */; };
+		FE3C7FC91C774EC900AEFEEB /* Trigger.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FC61C774EC900AEFEEB /* Trigger.m */; };
+		FE3C7FCA1C774EC900AEFEEB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FC81C774EC900AEFEEB /* User.m */; };
+		FE3C7FCE1C774EE300AEFEEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C7FCD1C774EE300AEFEEB /* ViewController.m */; };
+		FE3C7FD21C774F3100AEFEEB /* location-off.png in Resources */ = {isa = PBXBuildFile; fileRef = FE3C7FD01C774F3100AEFEEB /* location-off.png */; };
+		FE3C7FD31C774F3100AEFEEB /* location-on.png in Resources */ = {isa = PBXBuildFile; fileRef = FE3C7FD11C774F3100AEFEEB /* location-on.png */; };
 		FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E01C5BA40B00884CD6 /* main.m */; };
 		FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */; };
-		FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFCE9E61C5BA40B00884CD6 /* ViewController.m */; };
 		FEFCE9EA1C5BA40B00884CD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9E81C5BA40B00884CD6 /* Main.storyboard */; };
 		FEFCE9EC1C5BA40B00884CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */; };
 		FEFCE9EF1C5BA40B00884CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFCE9ED1C5BA40B00884CD6 /* LaunchScreen.storyboard */; };
@@ -24,20 +26,22 @@
 		7B16B1059F6038587CED8A86 /* libPods-ModesoGeotrigger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ModesoGeotrigger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61533AE571D45173FE7A8FF /* Pods-ModesoGeotrigger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.debug.xcconfig"; sourceTree = "<group>"; };
 		F43169CF54D454F225626BDD /* Pods-ModesoGeotrigger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModesoGeotrigger.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModesoGeotrigger/Pods-ModesoGeotrigger.release.xcconfig"; sourceTree = "<group>"; };
-		FE3C7FB31C75F75000AEFEEB /* ModesoMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModesoMapView.h; sourceTree = "<group>"; };
-		FE3C7FB41C75F75000AEFEEB /* ModesoMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModesoMapView.m; sourceTree = "<group>"; };
-		FE3C7FB61C761F6900AEFEEB /* GISOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GISOperations.h; sourceTree = "<group>"; };
-		FE3C7FB71C761F6900AEFEEB /* GISOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GISOperations.m; sourceTree = "<group>"; };
-		FE58E63A1C62463A000DF159 /* Trigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigger.h; sourceTree = "<group>"; };
-		FE58E63B1C62463A000DF159 /* Trigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trigger.m; sourceTree = "<group>"; };
-		FE58E63C1C62463A000DF159 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FE58E63D1C62463A000DF159 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FE3C7FBD1C774E7700AEFEEB /* GISOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GISOperations.h; sourceTree = "<group>"; };
+		FE3C7FBE1C774E7700AEFEEB /* GISOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GISOperations.m; sourceTree = "<group>"; };
+		FE3C7FC11C774EAE00AEFEEB /* ModesoMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModesoMapView.h; sourceTree = "<group>"; };
+		FE3C7FC21C774EAE00AEFEEB /* ModesoMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModesoMapView.m; sourceTree = "<group>"; };
+		FE3C7FC51C774EC900AEFEEB /* Trigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigger.h; sourceTree = "<group>"; };
+		FE3C7FC61C774EC900AEFEEB /* Trigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trigger.m; sourceTree = "<group>"; };
+		FE3C7FC71C774EC900AEFEEB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FE3C7FC81C774EC900AEFEEB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FE3C7FCC1C774EE300AEFEEB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE3C7FCD1C774EE300AEFEEB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE3C7FD01C774F3100AEFEEB /* location-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-off.png"; sourceTree = "<group>"; };
+		FE3C7FD11C774F3100AEFEEB /* location-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-on.png"; sourceTree = "<group>"; };
 		FEFCE9DC1C5BA40B00884CD6 /* ModesoGeotrigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModesoGeotrigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFCE9E01C5BA40B00884CD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FEFCE9E51C5BA40B00884CD6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FEFCE9E61C5BA40B00884CD6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FEFCE9E91C5BA40B00884CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEFCE9EE1C5BA40B00884CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,42 +77,51 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FE3C7FB91C76213600AEFEEB /* View Controllers */ = {
+		FE3C7FBC1C774E7700AEFEEB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				FEFCE9E51C5BA40B00884CD6 /* ViewController.h */,
-				FEFCE9E61C5BA40B00884CD6 /* ViewController.m */,
+				FE3C7FBD1C774E7700AEFEEB /* GISOperations.h */,
+				FE3C7FBE1C774E7700AEFEEB /* GISOperations.m */,
 			);
-			name = "View Controllers";
+			path = Common;
 			sourceTree = "<group>";
 		};
-		FE3C7FBA1C76214D00AEFEEB /* Custom Controls */ = {
+		FE3C7FC01C774EAE00AEFEEB /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
-				FE3C7FB31C75F75000AEFEEB /* ModesoMapView.h */,
-				FE3C7FB41C75F75000AEFEEB /* ModesoMapView.m */,
+				FE3C7FC11C774EAE00AEFEEB /* ModesoMapView.h */,
+				FE3C7FC21C774EAE00AEFEEB /* ModesoMapView.m */,
 			);
-			name = "Custom Controls";
+			path = "Custom Controls";
 			sourceTree = "<group>";
 		};
-		FE3C7FBB1C76215C00AEFEEB /* Common */ = {
+		FE3C7FC41C774EC900AEFEEB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FE3C7FB61C761F6900AEFEEB /* GISOperations.h */,
-				FE3C7FB71C761F6900AEFEEB /* GISOperations.m */,
+				FE3C7FC51C774EC900AEFEEB /* Trigger.h */,
+				FE3C7FC61C774EC900AEFEEB /* Trigger.m */,
+				FE3C7FC71C774EC900AEFEEB /* User.h */,
+				FE3C7FC81C774EC900AEFEEB /* User.m */,
 			);
-			name = Common;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		FE58E6401C624650000DF159 /* Models */ = {
+		FE3C7FCB1C774EE300AEFEEB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE58E63A1C62463A000DF159 /* Trigger.h */,
-				FE58E63B1C62463A000DF159 /* Trigger.m */,
-				FE58E63C1C62463A000DF159 /* User.h */,
-				FE58E63D1C62463A000DF159 /* User.m */,
+				FE3C7FCC1C774EE300AEFEEB /* ViewController.h */,
+				FE3C7FCD1C774EE300AEFEEB /* ViewController.m */,
 			);
-			name = Models;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE3C7FCF1C774F3100AEFEEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE3C7FD01C774F3100AEFEEB /* location-off.png */,
+				FE3C7FD11C774F3100AEFEEB /* location-on.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FEFCE9D31C5BA40B00884CD6 = {
@@ -135,14 +148,15 @@
 				FEFCE9E21C5BA40B00884CD6 /* AppDelegate.h */,
 				FEFCE9E31C5BA40B00884CD6 /* AppDelegate.m */,
 				FEFCE9EB1C5BA40B00884CD6 /* Assets.xcassets */,
-				FE3C7FBB1C76215C00AEFEEB /* Common */,
-				FE3C7FBA1C76214D00AEFEEB /* Custom Controls */,
+				FE3C7FBC1C774E7700AEFEEB /* Common */,
+				FE3C7FC01C774EAE00AEFEEB /* Custom Controls */,
 				FEFCE9F01C5BA40B00884CD6 /* Info.plist */,
 				FEFCE9ED1C5BA40B00884CD6 /* LaunchScreen.storyboard */,
 				FEFCE9E81C5BA40B00884CD6 /* Main.storyboard */,
-				FE58E6401C624650000DF159 /* Models */,
+				FE3C7FC41C774EC900AEFEEB /* Models */,
+				FE3C7FCF1C774F3100AEFEEB /* Resources */,
 				FEFCE9DF1C5BA40B00884CD6 /* Supporting Files */,
-				FE3C7FB91C76213600AEFEEB /* View Controllers */,
+				FE3C7FCB1C774EE300AEFEEB /* View Controllers */,
 			);
 			path = ModesoGeotrigger;
 			sourceTree = "<group>";
@@ -221,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE3C7FD21C774F3100AEFEEB /* location-off.png in Resources */,
+				FE3C7FD31C774F3100AEFEEB /* location-on.png in Resources */,
 				FEFCE9EF1C5BA40B00884CD6 /* LaunchScreen.storyboard in Resources */,
 				FEFCE9EC1C5BA40B00884CD6 /* Assets.xcassets in Resources */,
 				FEFCE9EA1C5BA40B00884CD6 /* Main.storyboard in Resources */,
@@ -282,11 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE58E63F1C62463A000DF159 /* User.m in Sources */,
-				FE58E63E1C62463A000DF159 /* Trigger.m in Sources */,
-				FE3C7FB51C75F75000AEFEEB /* ModesoMapView.m in Sources */,
-				FEFCE9E71C5BA40B00884CD6 /* ViewController.m in Sources */,
-				FE3C7FB81C761F6900AEFEEB /* GISOperations.m in Sources */,
+				FE3C7FCE1C774EE300AEFEEB /* ViewController.m in Sources */,
+				FE3C7FC91C774EC900AEFEEB /* Trigger.m in Sources */,
+				FE3C7FCA1C774EC900AEFEEB /* User.m in Sources */,
+				FE3C7FBF1C774E7700AEFEEB /* GISOperations.m in Sources */,
+				FE3C7FC31C774EAE00AEFEEB /* ModesoMapView.m in Sources */,
 				FEFCE9E41C5BA40B00884CD6 /* AppDelegate.m in Sources */,
 				FEFCE9E11C5BA40B00884CD6 /* main.m in Sources */,
 			);

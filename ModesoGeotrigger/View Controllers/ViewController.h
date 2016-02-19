@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ArcGIS/ArcGIS.h>
-#import <GeotriggerSDK/GeotriggerSDK.h>
-#import "ModesoMapView.h"
-#import "User.h"
 
 @interface ViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet ModesoMapView *mapView;
 
 @end
 

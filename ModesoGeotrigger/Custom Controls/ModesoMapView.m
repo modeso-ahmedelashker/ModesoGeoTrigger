@@ -16,88 +16,129 @@
 
 - (void)awakeFromNib {
     
+    [self setupItems];
+    
+    [self loadBaseLayer];
+}
+
+- (void)setupItems {
+    
     _lastLocation = nil;
+    
+    if (_allTriggersDics == nil) {
+        _allTriggersDics = [NSMutableArray array];
+    }
+    
+    [self setupDelegates];
+    
+    [self setupLocationManager];
+}
+
+- (void)setupDelegates {
     
     self.touchDelegate = self;
     self.callout.delegate = self;
     self.layerDelegate = self;
-    
-    //------------------------------Load base layer-------------------------------------
-    NSURL *mapUrl = [NSURL URLWithString:@"http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"];
-    AGSTiledMapServiceLayer *tiledLyr = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL:mapUrl];
-    
-    [self addMapLayer:tiledLyr withName:@"Base Map"];
+}
+
+- (void)setupLocationManager {
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
-    {
+    
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [self.locationManager requestAlwaysAuthorization];
     }
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-    {
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
 }
 
+- (void)loadBaseLayer {
+    
+    NSURL *mapUrl = [NSURL URLWithString:@"http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"];
+    AGSTiledMapServiceLayer *tiledLyr = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL:mapUrl];
+    
+    [self addMapLayer:tiledLyr withName:@"Base Map"];
+}
+
+#pragma mark - MapView delegate
 - (void)mapViewDidLoad:(AGSMapView *)mapView {
     
-    if (_markerSymbol == nil)
-    {
+    [self setupMapUI];
+    
+    [self retrievePlacesWithSelectedTags:nil];
+}
+
+- (void)setupMapUI {
+    
+    [self setupLocationPoint];
+    
+    [self setupTriggers];
+}
+
+- (void)setupLocationPoint {
+    
+    if (_markerSymbol == nil) {
         _markerSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbol];
         _markerSymbol.style = AGSSimpleMarkerSymbolStyleDiamond;
         _markerSymbol.color = [UIColor redColor];
     }
-    if (_currentMapPoint == nil)
-    {
+    
+    if (_currentMapPoint == nil) {
         _currentMapPoint = [[AGSPoint alloc] init];
     }
-    if (_currentMapPointGraphic == nil)
-    {
+    
+    if (_currentMapPointGraphic == nil) {
         _currentMapPointGraphic = [[AGSGraphic alloc] init];
     }
     
     _currentPointLayer = [AGSGraphicsLayer graphicsLayer];
     _currentPointLayer.allowLayerConsolidation = NO;
     [self addMapLayer:_currentPointLayer withName:@"Point Graphics Layer"];
+}
+
+- (void)setupTriggers {
     
-    if (_allTriggersDics == nil)
-    {
-        _allTriggersDics = [NSMutableArray array];
-    }
-    if (_selectedFillSymbol == nil)
-    {
+    [self setupSelectedTriggers];
+    
+    [self setupUnselectedTriggers];
+}
+
+- (void)setupSelectedTriggers {
+    
+    if (_selectedFillSymbol == nil) {
         _selectedFillSymbol = [AGSSimpleFillSymbol simpleFillSymbol];
         _selectedFillSymbol.color = [[UIColor greenColor] colorWithAlphaComponent:0.25];
     }
-    if (_unselectedFillSymbol == nil)
-    {
-        _unselectedFillSymbol = [AGSSimpleFillSymbol simpleFillSymbol];
-        _unselectedFillSymbol.color = [[UIColor redColor] colorWithAlphaComponent:0.25];
-    }
-    if (_selectedRenderer == nil)
-    {
+    
+    if (_selectedRenderer == nil) {
         _selectedRenderer = [[AGSSimpleRenderer alloc] initWithSymbol:_selectedFillSymbol];
-    }
-    if (_unselectedRenderer == nil)
-    {
-        _unselectedRenderer = [[AGSSimpleRenderer alloc] initWithSymbol:_unselectedFillSymbol];
     }
     
     _selectedTriggersLayer = [AGSGraphicsLayer graphicsLayer];
     _selectedTriggersLayer.allowLayerConsolidation = NO;
     _selectedTriggersLayer.renderer = _selectedRenderer;
-    [mapView addMapLayer:_selectedTriggersLayer withName:@"Selected Triggers Layer"];
+    [self addMapLayer:_selectedTriggersLayer withName:@"Selected Triggers Layer"];
+}
+
+- (void)setupUnselectedTriggers {
+    
+    if (_unselectedFillSymbol == nil) {
+        _unselectedFillSymbol = [AGSSimpleFillSymbol simpleFillSymbol];
+        _unselectedFillSymbol.color = [[UIColor redColor] colorWithAlphaComponent:0.25];
+    }
+    
+    if (_unselectedRenderer == nil) {
+        _unselectedRenderer = [[AGSSimpleRenderer alloc] initWithSymbol:_unselectedFillSymbol];
+    }
     
     _unselectedTriggersLayer = [AGSGraphicsLayer graphicsLayer];
     _unselectedTriggersLayer.allowLayerConsolidation = NO;
     _unselectedTriggersLayer.renderer = _unselectedRenderer;
-    [mapView addMapLayer:_unselectedTriggersLayer withName:@"Unselected Triggers Layer"];
-    
-    [self retrievePlacesWithSelectedTags:nil];
-    
-    [self.locationManager startUpdatingLocation];
+    [self addMapLayer:_unselectedTriggersLayer withName:@"Unselected Triggers Layer"];
 }
 
 - (void)retrievePlacesWithSelectedTags:(NSMutableSet*)loadedTags {
@@ -107,67 +148,61 @@
 
 - (void)drawTriggersWithParamsDictionary:(NSDictionary*)params andSelectedTags:(NSMutableSet*)loadedTags
 {
-    if (params == nil)
-    {
+    if (params == nil) {
         params = @{@"geoFormat": @"esrijson"};
     }
     
     [[AGSGTApiClient sharedClient] postPath:@"trigger/list"
                                  parameters:params
-                                    success:^(id responseObject)
-     {
-         if (responseObject != nil)
-         {
-             [self clearData];
-             
-             if ([loadedTags isKindOfClass:[NSMutableSet class]])
-             {
-                 //currentAreaTags = loadedTags;
-             }
-             
-             // Create scan envelope
-             AGSMutableEnvelope *containerEnvelope = [[AGSMutableEnvelope alloc] init];
-             
-             _allTriggersDics = [NSMutableArray arrayWithArray:responseObject[@"triggers"]];
-             
-             for (NSDictionary *trigger in _allTriggersDics)
-             {
-                 // Make a TM instance for easy use
-                 Trigger *TM = [[Trigger alloc] initWithDictionary:trigger GeoEngine:[AGSGeometryEngine defaultGeometryEngine] SpatialReference:self.spatialReference];
-                 
-                 // Load all tags to currentAreaTags if not value
-//                 if (loadedTags == nil || [loadedTags isKindOfClass:[NSNotification class]])
-//                     [currentAreaTags addObjectsFromArray:TM.tags];
-                 
-                 // Add Trigger to envelope
-                 [containerEnvelope unionWithEnvelope:[GISOperations envelopeFromGeometry:TM.graphic.geometry]];
-                 
-                 // Add TM to either selected or unselected layer depending on matched tags
-                 for (NSString* tag in TM.tags)
-                 {
-//                     if ([userTags containsObject:tag])
-//                         [_selectedTriggersLayer addGraphic:TM.graphic];
-//                     else
-                         [_unselectedTriggersLayer addGraphic:TM.graphic];
-                     
-                     // Collect zoom envelope for tags matching current data only, if any
-//                     if ([currentAreaTags containsObject:tag])
-//                         [containerEnvelope unionWithEnvelope:[self envelopeFromGeometry:TM.graphic.geometry]];
-                 }
-                 
-                 // If not, collect all
-                 //if (currentAreaTags == nil)
-                     [containerEnvelope unionWithEnvelope:[GISOperations envelopeFromGeometry:TM.graphic.geometry]];
-             }
-             
-             if (true) // location is on?
-             {
-                 [self drawLocationPointOnEnvelope:containerEnvelope];
-             }
-             
-             [self zoomToEnvelope:containerEnvelope animated:YES];
-         }
-     }
+                                    success:^(id responseObject) {
+                                        if (responseObject != nil) {
+                                            [self clearData];
+                                            
+                                            if ([loadedTags isKindOfClass:[NSMutableSet class]]) {
+                                                //currentAreaTags = loadedTags;
+                                            }
+                                            
+                                            // Create scan envelope
+                                            AGSMutableEnvelope *containerEnvelope = [[AGSMutableEnvelope alloc] init];
+                                            
+                                            _allTriggersDics = [NSMutableArray arrayWithArray:responseObject[@"triggers"]];
+                                            
+                                            for (NSDictionary *trigger in _allTriggersDics)
+                                            {
+                                                // Make a TM instance for easy use
+                                                Trigger *TM = [[Trigger alloc] initWithDictionary:trigger GeoEngine:[AGSGeometryEngine defaultGeometryEngine] SpatialReference:self.spatialReference];
+                                                
+                                                // Load all tags to currentAreaTags if not value
+                                                //                 if (loadedTags == nil || [loadedTags isKindOfClass:[NSNotification class]])
+                                                //                     [currentAreaTags addObjectsFromArray:TM.tags];
+                                                
+                                                // Add Trigger to envelope
+                                                [containerEnvelope unionWithEnvelope:[GISOperations envelopeFromGeometry:TM.graphic.geometry]];
+                                                
+                                                // Add TM to either selected or unselected layer depending on matched tags
+                                                for (NSString* tag in TM.tags) {
+                                                    //                     if ([userTags containsObject:tag])
+                                                    //                         [_selectedTriggersLayer addGraphic:TM.graphic];
+                                                    //                     else
+                                                    [_unselectedTriggersLayer addGraphic:TM.graphic];
+                                                    
+                                                    // Collect zoom envelope for tags matching current data only, if any
+                                                    //                     if ([currentAreaTags containsObject:tag])
+                                                    //                         [containerEnvelope unionWithEnvelope:[self envelopeFromGeometry:TM.graphic.geometry]];
+                                                }
+                                                
+                                                // If not, collect all
+                                                //if (currentAreaTags == nil)
+                                                [containerEnvelope unionWithEnvelope:[GISOperations envelopeFromGeometry:TM.graphic.geometry]];
+                                            }
+                                            
+                                            if (_lastLocation != nil) { // location is on?
+                                                [self drawLocationPointOnEnvelope:containerEnvelope];
+                                            }
+                                            
+                                            [self zoomToEnvelope:containerEnvelope animated:YES];
+                                        }
+                                    }
                                     failure:^(NSError *error)
      {
          
@@ -183,14 +218,6 @@
     [_unselectedTriggersLayer removeAllGraphics];
 }
 
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-    _lastLocation = locations.lastObject;
-    
-    [self drawLocationPointOnEnvelope:nil];
-}
-
 - (void)drawLocationPointOnEnvelope:(AGSMutableEnvelope*)receivedEnv {
     
     _currentMapPoint = [AGSPoint pointWithLocation:_lastLocation];
@@ -203,12 +230,10 @@
     [_selectedTriggersLayer refresh];
     [_unselectedTriggersLayer refresh];
     
-    if (receivedEnv == nil)
-    {
+    if (receivedEnv == nil) {
         [self zoomToScale:5000 withCenterPoint:_currentMapPoint animated:YES];
     }
-    else
-    {
+    else {
         [receivedEnv unionWithEnvelope:[GISOperations envelopeFromGeometry:((AGSGraphic*)_currentPointLayer.graphics[0]).geometry]];
         
         [self zoomToEnvelope:receivedEnv animated:YES];
@@ -220,16 +245,14 @@
     // Features is a layer-key based dictionary
     NSArray *oneKeyArr = features.allKeys;
     
-    if (oneKeyArr.count > 0)
-    {
+    if (oneKeyArr.count > 0) {
         // Clear promotions data for new result
         //[allPromotionsKeys removeAllObjects];
         //[allPromotionsValues removeAllObjects];
         
         // Get every Features->Layer->Graphic->Attributes->Data->Shop->Promotions->Dictionary
         // Looping in case of clicking on an multiple-layered area
-        for (int i = 0; i < oneKeyArr.count; i++)
-        {
+        for (int i = 0; i < oneKeyArr.count; i++) {
             // 1- Get graphics json array from the first non-point layer
             NSArray *allJsonGraphics = features.allValues[i];
             
@@ -239,8 +262,7 @@
             // 3- Check if graph attributes has data
             NSString *tempStr = [recievedTrigger attributeForKey:@"data"];
             
-            if (![tempStr isKindOfClass:[NSNull class]])
-            {
+            if (![tempStr isKindOfClass:[NSNull class]]) {
                 // 4- Data dictionary
                 NSDictionary *dict = [NSPropertyListSerialization
                                       propertyListWithData:[tempStr dataUsingEncoding:NSUTF8StringEncoding]
@@ -267,8 +289,7 @@
                 //                    }
                 //                }
             }
-            else // Current point graph touched = No data
-            {
+            else { // Current point graph touched = No data
                 [mapView.callout dismiss];
                 
                 continue;
@@ -277,8 +298,7 @@
             // Set callout, set table, reload table, set table as callout view and show callout
             [mapView.callout setFrame:CGRectMake(mappoint.x, mappoint.y, 300, 150)];
             
-            if (_tableCallout == nil)
-            {
+            if (_tableCallout == nil) {
                 _tableCallout = [[UITableView alloc] initWithFrame:mapView.callout.frame];
                 _tableCallout.dataSource = self;
                 _tableCallout.delegate = self;
@@ -297,18 +317,25 @@
         [mapView.callout dismiss];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-//    if (tableView == _tableCallout)
-//    {
-//        return 1 + allPromotionsKeys.count;
-//    }
-//    else
-        return 0;
+#pragma mark - Location manager delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    _lastLocation = locations.lastObject;
+    
+    [self drawLocationPointOnEnvelope:nil];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+#pragma mark - TableView datasource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //    if (tableView == _tableCallout)
+    //    {
+    //        return 1 + allPromotionsKeys.count;
+    //    }
+    //    else
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -317,13 +344,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
     
-//    if (indexPath.row == 0)
-//        cell.textLabel.text = selectedShopName;
-//    else
-//        cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", allPromotionsKeys[indexPath.row - 1], allPromotionsValues[indexPath.row - 1]];
+    //    if (indexPath.row == 0)
+    //        cell.textLabel.text = selectedShopName;
+    //    else
+    //        cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", allPromotionsKeys[indexPath.row - 1], allPromotionsValues[indexPath.row - 1]];
     
     return cell;
 }
-
 
 @end

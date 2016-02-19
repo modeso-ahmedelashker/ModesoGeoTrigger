@@ -10,8 +10,8 @@
 
 @implementation GISOperations
 
-+ (AGSMutableEnvelope *)envelopeFromGeometry:(AGSGeometry *)incomingGeometry
-{
++ (AGSMutableEnvelope *)envelopeFromGeometry:(AGSGeometry *)incomingGeometry {
+    
     AGSMutableEnvelope *newEnv = [AGSMutableEnvelope envelopeWithXmin:incomingGeometry.envelope.xmin ymin:incomingGeometry.envelope.ymin xmax:incomingGeometry.envelope.xmax ymax:incomingGeometry.envelope.ymax spatialReference:incomingGeometry.spatialReference];
     
     [newEnv expandByFactor:1.25];

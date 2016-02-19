@@ -8,8 +8,14 @@
 
 #import "ViewController.h"
 #import "GISOperations.h"
+#import "ModesoMapView.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet ModesoMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
+
+- (IBAction)locationButtonTapped:(id)sender;
 
 @end
 
@@ -41,6 +47,19 @@
         {
             [_mapView zoomToEnvelope:[GISOperations envelopeFromGeometry:graphic.geometry] animated:YES];
         }
+    }
+}
+
+- (IBAction)locationButtonTapped:(id)sender {
+    
+    _locationButton.selected = !_locationButton.selected;
+    
+    if (_locationButton.selected) {
+        [_mapView.locationManager startUpdatingLocation];
+    }
+    else {
+        [_mapView.locationManager stopUpdatingLocation];
+        [_mapView.currentPointLayer removeAllGraphics];
     }
 }
 @end
